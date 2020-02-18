@@ -1,15 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>HB referáty</title>
+    <title id="title"></title>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:400,400italic,500,500italic,700,700italic"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://code.getmdl.io/1.3.0/material.blue-red.min.css"
+    />
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
     <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
+    <script src="header.js"></script>
   </head>
-  <body>
-    <h1 class="underline">Module 3 collaborative project</h1>
+  <body id="body">
+    <script>
+      header();
+    </script>
+    <h1>Module 3 collaborative project</h1>
     <h3>Three random facts:</h3>
     <p>
       1: You can fit
@@ -30,17 +48,17 @@
       >
       km due to the 2015 earthquake in Nepal.
     </p>
-    <p class="line-divider"></p>
     <h3>Sources</h3>
     <a
+      target="_blank"
       href="http://www.suntrek.org/sun-as-a-star/sun-and-earth/comparing-size-sun-and-earth.shtml"
       >http://www.suntrek.org/sun-as-a-star/sun-and-earth/comparing-size-sun-and-earth.shtml</a
-    ><br /><br />
-    <a href="https://factsd.com/random-facts/"
+    >
+    <a target="_blank" href="https://factsd.com/random-facts/"
       >https://factsd.com/random-facts/</a
     >
-    <h4 class="footer onlyprint">2020 - Jan Brabec</h4>
-    <h4 class="link onlyprint" id="link"></h4>
-    <img class="qr onlyprint" id="qr" />
+    <script>
+      footer();
+    </script>
   </body>
 </html>
