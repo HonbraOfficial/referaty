@@ -1,4 +1,4 @@
-var componentHandler = componentHandler;
+M.AutoInit();
 
 function elemCreate(inputElem, inputText, inputClass, inputId, inputParent) {
   var element = document.createElement(inputElem);
@@ -6,7 +6,6 @@ function elemCreate(inputElem, inputText, inputClass, inputId, inputParent) {
   element.appendChild(elementText);
   element.className = inputClass;
   element.id = inputId;
-  componentHandler.upgradeElement(element);
   document.getElementById(inputParent).appendChild(element);
 }
 
@@ -14,6 +13,7 @@ function indexSubmit() {
   if (document.getElementById("indexText").value) {
     if (
       document.getElementById("indexText").value == "755309" ||
+      document.getElementById("indexText").value == "104544" ||
       document.getElementById("indexText").value == "190766"
     ) {
       lhref(document.getElementById("indexText").value + ".html");
@@ -24,12 +24,11 @@ function indexSubmit() {
 }
 
 function lhref(h) {
-  document.getElementById("loading").style.display = "initial";
   location.href = h;
 }
 
 function searchh(x) {
-  myPopup(('https://duckduckgo.com/?q=' + x), "web", 750, 500);
+  myPopup("https://duckduckgo.com/?q=" + x, "web", 750, 500);
 }
 
 function myPopup(myURL, title, myWidth, myHeight) {

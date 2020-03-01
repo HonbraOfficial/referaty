@@ -1,3 +1,7 @@
+@import "https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css";
+@import "https://fonts.googleapis.com/css?family=Roboto:400,400italic,500,500italic,700,700italic";
+@import "https://fonts.googleapis.com/icon?family=Material+Icons";
+
 ::-webkit-scrollbar {
     width: 12px;
 }
@@ -10,21 +14,8 @@
     background-color: rgb(33,150,243);
 }
 
-main {
-	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-	background-size: 400% 400%;
-}
-
-@keyframes gradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
+body {
+	background-color: #ffffff;
 }
 
 .article {
@@ -42,17 +33,10 @@ main {
     margin: 0 0;
     box-shadow: none;
   }
-  main {
-    background: white;
-  }
 }
 
 .mdl-progress>.bar {
   transition: none;
-}
-
-code {
-  background-color: rgba(61, 61, 61, 0.1);
 }
 
 .right {
@@ -77,4 +61,12 @@ code {
 
 .kdeho {
   max-width: 100%;
+}
+
+main a {
+  cursor: pointer;
+}
+
+.no-depth {
+  box-shadow: none;
 }

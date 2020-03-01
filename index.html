@@ -5,55 +5,38 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Roboto:400,400italic,500,500italic,700,700italic"
-      rel="stylesheet"
-      type="text/css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://code.getmdl.io/1.3.0/material.blue-red.min.css"
-    />
-    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"
+    ></script>
     <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
     <script src="header.js"></script>
   </head>
-  <body id="body">
-    <script>
-      header();
-    </script>
-    <h1>
+  <body>
+    <h2>
       Vítejte!
-    </h1>
+    </h2>
     <p>
       Zadejte prosím kód referátu.
     </p>
-    <div class="mdl-textfield mdl-js-textfield w100">
+    <div class="input-field s12 light-blue-text">
       <input
-        class="mdl-textfield__input"
         type="text"
         pattern="-?[0-9]*(\.[0-9]+)?"
         id="indexText"
+        class="validate"
       />
-      <label class="mdl-textfield__label" for="indexText">Kód...</label>
-      <span class="mdl-textfield__error">Není číslo!</span>
+      <label for="indexText">Kód referátu</label>
     </div>
     <p>
       <button
-        class="mdl-button mdl-button--raised mdl-button--colored mdl-js-button mdl-js-ripple-effect right"
+        class="waves-effect waves-light btn right light-blue"
         onclick="indexSubmit()"
-      >Potvrdit
+      >
+        Potvrdit
       </button>
-      <button
-        class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"
-        onclick="lhref('nematekod.html')"
-      >Nemáte kód?
-      </button>
+      <a class="waves-effect btn-flat" href="nematekod.html">Nemáte kód? </a>
     </p>
     <script>
       footer();
