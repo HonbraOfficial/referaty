@@ -1,51 +1,82 @@
-M.AutoInit();
+mdc.autoInit();
 
-function elemCreate(inputElem, inputText, inputClass, inputId, inputParent) {
-  var element = document.createElement(inputElem);
-  var elementText = document.createTextNode(inputText);
-  element.appendChild(elementText);
-  element.className = inputClass;
-  element.id = inputId;
-  document.getElementById(inputParent).appendChild(element);
+const MDCTopAppBar = mdc.topAppBar.MDCTopAppBar;
+const MDCDrawer = mdc.drawer.MDCDrawer;
+
+
+const drawer = MDCDrawer.attachTo(document.querySelector('.mdc-drawer'));
+const topAppBar = MDCTopAppBar.attachTo(document.querySelector('.mdc-top-app-bar'));
+topAppBar.listen('MDCTopAppBar:nav', () => {
+    drawer.open = !drawer.open;
+});
+
+if (document.querySelector(".article__title")) {
+    document.querySelector("title").innerHTML = document.querySelector(".article__title").innerHTML + " | " + document.querySelector("title").innerHTML;
 }
 
-function indexSubmit() {
-  if (document.getElementById("indexText").value) {
-    if (
-      document.getElementById("indexText").value == "755309" ||
-      document.getElementById("indexText").value == "104544" ||
-      document.getElementById("indexText").value == "190766"
-    ) {
-      lhref(document.getElementById("indexText").value + ".html");
-    } else {
-      document.getElementById("indexText").value = "Špatný kód!";
+addRipple(".mdc-list-item");
+addRipple(".mdc-card__primary-action");
+
+if (document.querySelector(".index")) {
+    displayArticles();
+}
+
+function addRipple(selector, unbounded) {
+    if (document.querySelector(selector)) {
+        if (unbounded) {
+            var elems = document.querySelectorAll(selector);
+            for (var elem of elems) {
+                var ripple = new mdc.ripple.MDCRipple(elem);
+                ripple.unbounded = true;
+            }
+        } else {
+            var elems = document.querySelectorAll(selector);
+            for (var elem of elems) {
+                new mdc.ripple.MDCRipple(elem);
+            }
+        }
     }
-  }
 }
 
-function lhref(h) {
-  location.href = h;
+function displayArticles() {
+    var i,
+        x = "";
+    var apiout = articleDB();
+    for (i in apiout.articles) {
+        x +=
+            '<div class="mdc-card mdc-card--outlined"> <div class="mdc-card__primary-action" tabindex="0" onclick="lhref(\'' +
+            apiout.articles[i].link +
+            '\')"><div class="mdc-card__primary"><div class="mdc-typography--headline6">' +
+            apiout.articles[i].name +
+            ' </div><div class="mdc-typography mdc-typography--subtitle2">' +
+            apiout.articles[i].desc +
+            "</div></div></div></div>";
+    }
+    document.querySelector(".index-cont").innerHTML = x;
+    addRipple(".mdc-card__primary-action");
 }
 
-function searchh(x) {
-  myPopup("https://duckduckgo.com/?q=" + x, "web", 750, 500);
+function articleDB() {
+    return {
+        articles: [{
+                name: "Steré pověsti české",
+                desc: "Čtenářský deník - Literatura",
+                link: "articles/104544.html"
+            },
+            {
+                name: "Module 3 project",
+                desc: "Referát - CTM",
+                link: "articles/190766.html"
+            },
+            {
+                name: "Srp z pravěku",
+                desc: "Referát - Dějepis",
+                link: "articles/755309.html"
+            }
+        ]
+    };
 }
 
-function myPopup(myURL, title, myWidth, myHeight) {
-  var left = (screen.width - myWidth) / 2;
-  var top = (screen.height - myHeight) / 4;
-  var myWindow = window.open(
-    myURL,
-    title,
-    "toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width=" +
-      myWidth +
-      ", height=" +
-      myHeight +
-      ", top=" +
-      top +
-      ", left=" +
-      left
-  );
-
-  window.myWindow = myWindow;
+function lhref(link) {
+    location.href = link;
 }

@@ -1,0 +1,88 @@
+@import url("https://storage.googleapis.com/spec-host/mio-staging/mio-design/1584058305895/static/m2/css/main.min.css");
+@import url("https://unpkg.com/material-components-web@v5.1.0/dist/material-components-web.min.css");
+@import url('https://fonts.googleapis.com/css?lang=en&family=Material+Icons|Product+Sans|Roboto:400,700');
+body {
+    font-family: "Roboto", helvetica, arial, sans-serif;
+    margin: 0px;
+}
+
+.mdc-ripple-upgraded:before {
+    display: none;
+}
+
+.mdc-top-app-bar__title,
+.mdc-drawer__title {
+    font-family: "Product Sans";
+}
+
+.mdc-top-app-bar {
+    top: 0px;
+}
+
+.mdc-drawer--modal {
+    top: 0;
+}
+
+article {
+    p,
+    a {
+        text-align: justify;
+    }
+}
+
+.mdc-top-app-bar--fixed {
+    background-color: white !important;
+    color: rgba(0, 0, 0, 0.9);
+    .mdc-top-app-bar__navigation-icon,
+    .mdc-ripple-upgraded {
+        color: rgba(0, 0, 0, 0.9) !important;
+        &:before,
+        &:after {
+            background-color: rgba(0, 0, 0, 0.5) !important;
+        }
+    }
+}
+
+.index-cont {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    padding-top: 40px;
+    .mdc-card {
+        max-width: 400px;
+        margin: 10px;
+    }
+    .mdc-card__primary {
+        padding: 10px;
+    }
+    .mdc-card {
+        width: 240px;
+        height: 106px;
+        color: black;
+        user-select: none;
+    }
+    .mdc-card__primary-action {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .mdc-card__primary {
+        text-align: center;
+    }
+}
+
+@media (max-width: 750px) {
+    .index .mdc-card {
+        width: 100%;
+    }
+}

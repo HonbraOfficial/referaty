@@ -1,45 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title id="title"></title>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <script
-      defer
-      src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"
-    ></script>
-    <link rel="stylesheet" href="style.css" />
+
+<head>
+    <title>Jan Brabec</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://unpkg.com/material-components-web@v5.1.0/dist/material-components-web.min.js"></script>
+    <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
     <script src="header.js"></script>
-  </head>
-  <body>
-    <h2>
-      Vítejte!
-    </h2>
-    <p>
-      Zadejte prosím kód referátu.
-    </p>
-    <div class="input-field s12 light-blue-text">
-      <input
-        type="text"
-        pattern="-?[0-9]*(\.[0-9]+)?"
-        id="indexText"
-        class="validate"
-      />
-      <label for="indexText">Kód referátu</label>
+</head>
+
+<body class="index">
+    <article>
+        <div class="article__intro container container--large">
+            <div class="article__intro-text">
+                <h1 class="article__title">Jan Brabec</h1>
+                <h2 class="headline-2">Student mensa gymnázia</h2>
+            </div>
+        </div>
+    </article>
+    <div class="index-cont">
+
     </div>
-    <p>
-      <button
-        class="waves-effect waves-light btn right light-blue"
-        onclick="indexSubmit()"
-      >
-        Potvrdit
-      </button>
-      <a class="waves-effect btn-flat" href="nematekod.html">Nemáte kód? </a>
-    </p>
-    <script>
-      footer();
-    </script>
-  </body>
+
+</body>
+
 </html>
