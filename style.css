@@ -28,6 +28,10 @@ article a {
   text-align: justify;
 }
 
+article img {
+  max-width: 100%;
+}
+
 .mdc-top-app-bar--fixed {
   background-color: white !important;
   color: rgba(0, 0, 0, 0.9);
