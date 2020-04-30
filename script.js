@@ -64,11 +64,6 @@ function articleDB() {
                 link: "articles/98849.html"
             },
             {
-                name: "Jak upéct chleba",
-                desc: "Referát - Český jazyk",
-                link: "articles/824068.html"
-            },
-            {
                 name: "Steré pověsti české",
                 desc: "Čtenářský deník - Literatura",
                 link: "articles/104544.html"
@@ -86,6 +81,14 @@ function articleDB() {
         ]
     };
 }
+
+/*
+ {
+                name: "Jak upéct chleba",
+                desc: "Referát - Český jazyk",
+                link: "articles/824068.html"
+            },
+*/
 
 function lhref(link) {
     location.href = link;
