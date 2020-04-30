@@ -44,16 +44,16 @@ function displayArticles() {
     var apiout = articleDB();
     for (i in apiout.articles) {
         x +=
-            '<div class="mdc-card mdc-card--outlined"> <div class="mdc-card__primary-action" tabindex="0" onclick="lhref(\'' +
+            '<div class="mdc-ripple-surface article-card" onclick="lhref(\'' +
             apiout.articles[i].link +
-            '\')"><div class="mdc-card__primary"><div class="mdc-typography--headline6">' +
+            '\')"><div class="mdc-typography--headline6">' +
             apiout.articles[i].name +
             ' </div><div class="mdc-typography mdc-typography--subtitle2">' +
             apiout.articles[i].desc +
-            "</div></div></div></div>";
+            "</div></div>";
     }
-    document.querySelector(".index-cont").innerHTML = x;
-    addRipple(".mdc-card__primary-action");
+    document.querySelector(".articles-cont").innerHTML += x;
+    addRipple(".mdc-ripple-surface");
 }
 
 function articleDB() {

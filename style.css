@@ -6,10 +6,6 @@ body {
   margin: 0px;
 }
 
-.mdc-ripple-upgraded:before {
-  display: none;
-}
-
 .mdc-top-app-bar__title,
 .mdc-drawer__title {
   font-family: "Product Sans";
@@ -98,6 +94,18 @@ article img {
 
 .index-cont .mdc-card__primary {
   text-align: center;
+}
+
+.articles-cont {
+  padding: 20px;
+  margin-bottom: 50px;
+}
+
+.articles-cont .article-card {
+  padding: 10px;
+  margin: 0;
+  border-radius: 0px;
+  color: black;
 }
 
 @media (max-width: 750px) {
