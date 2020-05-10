@@ -2,31 +2,55 @@
 <html lang="en">
 
 <head>
-    <title>Jan Brabec</title>
+    <title>HB Referáty</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://unpkg.com/material-components-web@v5.1.0/dist/material-components-web.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/material-components-web@6/dist/material-components-web.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/material-components-web@6/dist/material-components-web.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Product+Sans|Google+Sans|Material+Icons|Roboto:300,400,500&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/combine/npm/marked/marked.min.js"></script>
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
-    <script src="header.js"></script>
+    <script>
+        if (window.document.documentMode) {
+            alert("Omlouvám se, ale Internet Explorer NEPODPORUJI. Stáhněte si novější prohlížeč a vraťte se zpátky.");
+            location.href("https://www.google.com/chrome/#eula");
+        }
+    </script>
 </head>
 
-<body class="index">
-    <article>
-        <div class="article__intro container container--large">
-            <div class="article__intro-text">
-                <h1 class="article__title">Jan Brabec</h1>
-                <h2 class="headline-2">Student mensa gymnázia</h2>
+<body>
+
+    <div class="loading">
+        <div class="loadingio-spinner-spinner-josi8mpjvw spinner">
+            <div class="ldio-dpky4vx30rh">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
             </div>
         </div>
-    </article>
-    <div class="article__body container container--large">
-        <section>
-            <div class="mdc-card mdc-card--outlined articles-cont">
-                <div class="mdc-typography--headline4">Články</div>
+    </div>
+
+    <div class="wrapper">
+        <i class="fad fa-bars menu"></i>
+        <header class="nav">
+            <div class="name">
+                <img src="https://honbraofficial.github.io/avatar.jpg" class="logo">
+                <div class="text">HB Referáty</div>
             </div>
-        </section>
+            <a class="link" href="?!="><i class="fad fa-home"></i>Domů</a>
+        </header>
+        <main class="main"></main>
     </div>
 </body>
 

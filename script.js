@@ -1,95 +1,62 @@
-mdc.autoInit();
+window.addEventListener('load', function() {
+    window.setTimeout(function() { pageLoaded(); }, 3000);
 
-const MDCTopAppBar = mdc.topAppBar.MDCTopAppBar;
-const MDCDrawer = mdc.drawer.MDCDrawer;
+})
 
-
-const drawer = MDCDrawer.attachTo(document.querySelector('.mdc-drawer'));
-const topAppBar = MDCTopAppBar.attachTo(document.querySelector('.mdc-top-app-bar'));
-topAppBar.listen('MDCTopAppBar:nav', () => {
-    drawer.open = !drawer.open;
-});
-
-if (document.querySelector(".article__title")) {
-    document.querySelector("title").innerHTML = document.querySelector(".article__title").innerHTML + " | " + document.querySelector("title").innerHTML;
+window.onbeforeunload = function() {
+    pageUnloaded();
 }
 
-addRipple(".mdc-list-item");
-addRipple(".mdc-card__primary-action");
+window.addEventListener("beforeunload", function(e) {
+    pageUnloaded();
+}, false);
 
-if (document.querySelector(".index")) {
-    displayArticles();
+var url_string = window.location.href;
+var url = new URL(url_string);
+var article = url.searchParams.get("!");
+
+if (article) {
+    getJSON(`art/${article}.md`, function(result) {
+        document.querySelector("main").innerHTML = marked(result);
+        pageLoaded();
+    });
+} else {
+    var article = "home";
+    getJSON(`art/${article}.md`, function(result) {
+        document.querySelector("main").innerHTML = marked(result);
+        pageLoaded();
+    });
 }
 
-function addRipple(selector, unbounded) {
-    if (document.querySelector(selector)) {
-        if (unbounded) {
-            var elems = document.querySelectorAll(selector);
-            for (var elem of elems) {
-                var ripple = new mdc.ripple.MDCRipple(elem);
-                ripple.unbounded = true;
-            }
-        } else {
-            var elems = document.querySelectorAll(selector);
-            for (var elem of elems) {
-                new mdc.ripple.MDCRipple(elem);
-            }
+document.querySelector(".menu").onclick = function() {
+    if (document.querySelector(".nav").className == "nav") {
+        document.querySelector(".nav").className = "nav nav-opened";
+    } else {
+        document.querySelector(".nav").className = "nav";
+    }
+}
+
+function pageLoaded() {
+    document.querySelector("body").classList.add("loaded");
+}
+
+function pageUnloaded() {
+    document.querySelector("body").classList.remove("loaded");
+}
+
+function getJSON(url, after) {
+    var data = null;
+
+    var xhr = new XMLHttpRequest();
+    xhr.withCredentials = false;
+
+    xhr.addEventListener("readystatechange", function() {
+        if (this.readyState === this.DONE) {
+            after(this.responseText);
         }
-    }
-}
+    });
 
-function displayArticles() {
-    var i,
-        x = "";
-    var apiout = articleDB();
-    for (i in apiout.articles) {
-        x +=
-            '<div class="mdc-ripple-surface article-card" onclick="lhref(\'' +
-            apiout.articles[i].link +
-            '\')"><div class="mdc-typography--headline6">' +
-            apiout.articles[i].name +
-            ' </div><div class="mdc-typography mdc-typography--subtitle2">' +
-            apiout.articles[i].desc +
-            "</div></div>";
-    }
-    document.querySelector(".articles-cont").innerHTML += x;
-    addRipple(".mdc-ripple-surface");
-}
+    xhr.open("GET", url);
 
-function articleDB() {
-    return {
-        articles: [{
-                name: "Popelka a stalking",
-                desc: "Pohádka - Literatura",
-                link: "articles/98849.html"
-            },
-            {
-                name: "Steré pověsti české",
-                desc: "Čtenářský deník - Literatura",
-                link: "articles/104544.html"
-            },
-            {
-                name: "Module 3 project",
-                desc: "Referát - CTM",
-                link: "articles/190766.html"
-            },
-            {
-                name: "Srp z pravěku",
-                desc: "Referát - Dějepis",
-                link: "articles/755309.html"
-            }
-        ]
-    };
-}
-
-/*
- {
-                name: "Jak upéct chleba",
-                desc: "Referát - Český jazyk",
-                link: "articles/824068.html"
-            },
-*/
-
-function lhref(link) {
-    location.href = link;
+    xhr.send(data);
 }
