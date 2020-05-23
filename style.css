@@ -115,6 +115,11 @@ body {
   text-decoration: underline;
 }
 
+.wrapper .main img,
+.wrapper main img {
+  max-width: 100%;
+}
+
 @media (max-width: 1050px) {
   .wrapper {
     margin: 50px 10px;
