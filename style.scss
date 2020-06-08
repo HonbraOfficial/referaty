@@ -1,87 +1,116 @@
-@import url("https://kit-pro.fontawesome.com/releases/latest/css/pro-v4-font-face.min.css");
-@import url("https://kit-pro.fontawesome.com/releases/latest/css/pro-v4-shims.min.css");
-@import url("https://kit-pro.fontawesome.com/releases/latest/css/pro.min.css");
-body {
-    margin: 0;
-    font-family: Roboto, 'Segoe UI', Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    background: fixed linear-gradient(to right bottom, #2E3192, #1BFFFF);
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto&display=swap');
+@import url("flow-text.css");
+@mixin serif {
+    font-family: 'Playfair Display', serif;
 }
 
-.wrapper {
-    margin: 50px auto;
-    box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.2);
-    border-radius: 15px;
-    background: rgba(0, 0, 0, 0.2);
-    overflow: hidden;
-    display: flex;
-    max-width: 1000px;
+@mixin sansserif {
+    font-family: 'Roboto', sans-serif;
+}
+
+::-webkit-scrollbar {
+    width: 16px;
+    border-left: 1px solid lightgrey;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: lightgrey;
+    &:active {
+        background-color: grey;
+    }
+}
+
+::selection {
+    background-color: black;
+    color: white;
+    mix-blend-mode: difference;
+}
+
+body {
+    @include sansserif;
+    margin: 0px;
+}
+
+#main-head {
+    /* border-bottom: 1px solid white; */
+    background-color: white;
+    position: fixed;
+    top: 0px;
+    left: 0px;
     width: 100%;
-    min-height: calc(100vh - 100px);
-    position: relative;
-    .menu {
-        display: none;
-    }
-    .nav {
-        padding: 50px 40px;
-        overflow: hidden;
-        color: #fff;
-        width: 200px;
-        .name {
+    /* transition: border-bottom 0.3s; */
+    border-bottom: 1px solid lightgrey;
+    .head {
+        padding: 10px;
+        text-align: center;
+        position: relative;
+        .title {
+            color: black;
             font-size: 30px;
-            font-family: "Google Sans", "Product Sans", Roboto, 'Segoe UI', Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-            .logo {
-                border-radius: 100%;
-                max-width: 75px;
-            }
-        }
-        .link,
-        a {
-            display: flex;
-            justify-content: left;
-            align-items: center;
-            font-size: 20px;
-            position: relative;
-            padding: 12px 0px;
-            width: 100%;
-            margin: 10px 0px;
-            cursor: pointer;
-            font-weight: 400;
-            color: white;
+            @include serif;
             text-decoration: none;
-            &::after {
-                background: none;
-                position: absolute;
-                top: 0px;
-                left: -40px;
-                width: 0px;
-                height: 100%;
-                content: "";
-                border-radius: 0px 36px 36px 0px;
-                transition: all 300ms ease;
-            }
-            &:hover::after {
-                width: calc(100% + 40px);
-                background: rgba(255, 255, 255, 0.1);
-            }
-            i {
-                margin-right: 10px;
-            }
-        }
-        .link.current-menu-item::after {
-            width: calc(100% + 40px);
-            background: rgba(255, 255, 255, 0.1);
+            text-align: center;
+            transition: font-size 0.3s;
         }
     }
-    .main,
-    main {
-        background: #F0F5F8;
-        padding: 50px 20px;
-        width: calc(100% - 320px);
+    &.scrolled {
+        /* border-bottom: 1px solid lightgrey; */
+        .head {
+            .title {
+                font-size: 25px;
+            }
+        }
+    }
+}
+
+.filler {
+    height: 500vh;
+}
+
+.head-fill {
+    width: 100%;
+}
+
+main {
+    article {
+        margin: 0 auto;
+        width: calc(100% - 40px);
+        max-width: 1000px;
+        padding: 20px;
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            @include serif;
+        }
+        h1 {
+            font-size: 2em;
+        }
+        h2 {
+            font-size: 1.5em;
+        }
+        h3 {
+            font-size: 1.25em;
+        }
+        h4 {
+            font-size: 1.125em;
+        }
+        h5 {
+            font-size: 1.0625em;
+        }
+        h6 {
+            font-size: 1em;
+        }
         a {
             color: dodgerblue;
             text-decoration: none;
             &:hover {
                 text-decoration: underline;
+            }
+            &:active {
+                color: royalblue;
             }
         }
         img {
@@ -90,202 +119,10 @@ body {
     }
 }
 
-@media (max-width: 1050px) {
-    .wrapper {
-        margin: 50px 10px;
-        width: calc(100% - 20px);
-        min-height: calc(100vh - 100px);
-        .nav {
-            pointer-events: none;
-            position: absolute;
-            top: 0px;
-            left: 0px;
-            height: 100%;
-            width: 100%;
-            background: rgb(50, 50, 50);
-            z-index: 10;
-            opacity: 0;
-            transition: opacity 0.2s;
-        }
-        .nav-opened {
-            opacity: 1;
-            pointer-events: initial;
-        }
-        .main,
-        main {
-            width: 100%;
-        }
-        .menu {
-            display: block !important;
-            cursor: pointer;
-            position: absolute;
-            top: 0px;
-            left: 0px;
-            height: 40px;
-            width: 40px;
-            background: grey;
-            border-bottom-right-radius: 100%;
-            z-index: 15;
-            color: white;
-            display: flex;
-            padding-top: 10px;
-            padding-left: 10px;
-            font-size: 20px;
-        }
-    }
+footer {
+    text-align: center;
+    padding: 20px;
+    border-top: 1px solid lightgrey;
+    @include serif;
+    font-size: 20px;
 }
-
-.loading {
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    height: 100%;
-    width: 100%;
-    background: white;
-    transition: opacity 0.3s ease-in-out;
-    z-index: 100;
-    .spinner {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
-}
-
-.loaded {
-    .loading {
-        opacity: 0 !important;
-        pointer-events: none !important;
-    }
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-weight: 400;
-}
-
-p {
-    text-align: justify;
-}
-
-@keyframes ldio-dpky4vx30rh {
-    0% {
-        opacity: 1
-    }
-    100% {
-        opacity: 0
-    }
-}
-
-.ldio-dpky4vx30rh div {
-    left: 111.39px;
-    top: 34.365px;
-    position: absolute;
-    animation: ldio-dpky4vx30rh linear 1s infinite;
-    background: #e6261f;
-    width: 14.22px;
-    height: 7.11px;
-    border-radius: 0px / 0px;
-    transform-origin: 7.11px 84.135px;
-}
-
-.ldio-dpky4vx30rh div:nth-child(1) {
-    transform: rotate(0deg);
-    animation-delay: -0.9166666666666666s;
-    background: #e6261f;
-}
-
-.ldio-dpky4vx30rh div:nth-child(2) {
-    transform: rotate(30deg);
-    animation-delay: -0.8333333333333334s;
-    background: #eb7532;
-}
-
-.ldio-dpky4vx30rh div:nth-child(3) {
-    transform: rotate(60deg);
-    animation-delay: -0.75s;
-    background: #f7d038;
-}
-
-.ldio-dpky4vx30rh div:nth-child(4) {
-    transform: rotate(90deg);
-    animation-delay: -0.6666666666666666s;
-    background: #a3e048;
-}
-
-.ldio-dpky4vx30rh div:nth-child(5) {
-    transform: rotate(120deg);
-    animation-delay: -0.5833333333333334s;
-    background: #49da9a;
-}
-
-.ldio-dpky4vx30rh div:nth-child(6) {
-    transform: rotate(150deg);
-    animation-delay: -0.5s;
-    background: #34bbe6;
-}
-
-.ldio-dpky4vx30rh div:nth-child(7) {
-    transform: rotate(180deg);
-    animation-delay: -0.4166666666666667s;
-    background: #4355db;
-}
-
-.ldio-dpky4vx30rh div:nth-child(8) {
-    transform: rotate(210deg);
-    animation-delay: -0.3333333333333333s;
-    background: #d23be7;
-}
-
-.ldio-dpky4vx30rh div:nth-child(9) {
-    transform: rotate(240deg);
-    animation-delay: -0.25s;
-    background: #e6261f;
-}
-
-.ldio-dpky4vx30rh div:nth-child(10) {
-    transform: rotate(270deg);
-    animation-delay: -0.16666666666666666s;
-    background: #eb7532;
-}
-
-.ldio-dpky4vx30rh div:nth-child(11) {
-    transform: rotate(300deg);
-    animation-delay: -0.08333333333333333s;
-    background: #f7d038;
-}
-
-.ldio-dpky4vx30rh div:nth-child(12) {
-    transform: rotate(330deg);
-    animation-delay: 0s;
-    background: #a3e048;
-}
-
-.loadingio-spinner-spinner-josi8mpjvw {
-    width: 237px;
-    height: 237px;
-    display: inline-block;
-    overflow: hidden;
-    background: none;
-}
-
-.ldio-dpky4vx30rh {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    transform: translateZ(0) scale(1);
-    backface-visibility: hidden;
-    transform-origin: 0 0;
-    /* see note above */
-}
-
-.ldio-dpky4vx30rh div {
-    box-sizing: content-box;
-}
-
-
-/* generated by https://loading.io/ */
