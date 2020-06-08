@@ -1,0 +1,14 @@
+{
+    "name": "HBReferáty",
+    "short_name": "HBReferáty",
+    "icons": [{
+        "src": "favicon.png",
+        "sizes": "1600x1600",
+        "type": "image/png"
+    }],
+    "lang": "cs-CZ",
+    "start_url": "index.html",
+    "display": "standalone",
+    "background_color": "white",
+    "theme_color": "white"
+}

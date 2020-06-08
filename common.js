@@ -1,3 +1,12 @@
+window.onload = () => {
+    'use strict';
+
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker
+            .register('./sw.js');
+    }
+}
+
 window.onscroll = function() { scrollFunction() };
 const mainHead = document.getElementById("main-head");
 const headFill = document.querySelector(".head-fill");
