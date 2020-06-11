@@ -128,6 +128,10 @@ main article a:active {
 
 main article img {
   max-width: 100%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-height: 750px;
 }
 
 main article p {
