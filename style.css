@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Product+Sans&family=Roboto&display=swap");
 @import url("flow-text.css");
 ::-webkit-scrollbar {
   width: 16px;
@@ -50,7 +50,7 @@ body {
 #main-head .head .title {
   color: black;
   font-size: 30px;
-  font-family: 'Playfair Display', serif;
+  font-family: 'Product Sans', sans-serif;
   text-decoration: none;
   text-align: center;
   -webkit-transition: font-size 0.3s;
@@ -87,7 +87,7 @@ main article h3,
 main article h4,
 main article h5,
 main article h6 {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Product Sans', sans-serif;
 }
 
 main article h1 {
@@ -135,11 +135,43 @@ main article img {
   max-height: 750px;
 }
 
+main article p {
+  text-indent: 0em;
+}
+
+main article .index-articles {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+main article .index-articles p {
+  display: block;
+  border: 1px solid lightgrey;
+  position: relative;
+  width: 100%;
+  max-width: 478px;
+  margin: 10px;
+}
+
+main article .index-articles p a {
+  display: block;
+  height: calc(100% - 40px);
+  width: calc(100% - 40px);
+  padding: 20px;
+  text-align: center;
+}
+
 footer {
   text-align: center;
   padding: 20px;
   border-top: 1px solid lightgrey;
-  font-family: 'Playfair Display', serif;
+  font-family: 'Product Sans', sans-serif;
   font-size: 20px;
 }
 /*# sourceMappingURL=style.css.map */

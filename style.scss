@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Product+Sans&family=Roboto&display=swap');
 @import url("flow-text.css");
-@mixin serif {
-    font-family: 'Playfair Display', serif;
+@mixin productsans {
+    font-family: 'Product Sans', sans-serif;
 }
 
-@mixin sansserif {
+@mixin roboto {
     font-family: 'Roboto', sans-serif;
 }
 
@@ -27,7 +27,7 @@
 }
 
 body {
-    @include sansserif;
+    @include roboto;
     margin: 0px;
 }
 
@@ -47,7 +47,7 @@ body {
         .title {
             color: black;
             font-size: 30px;
-            @include serif;
+            @include productsans;
             text-decoration: none;
             text-align: center;
             transition: font-size 0.3s;
@@ -84,7 +84,7 @@ main {
         h4,
         h5,
         h6 {
-            @include serif;
+            @include productsans;
         }
         h1 {
             font-size: 2em;
@@ -121,6 +121,29 @@ main {
             margin-right: auto;
             max-height: 750px;
         }
+        p {
+            text-indent: 0em;
+        }
+        .index-articles {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            p {
+                display: block;
+                border: 1px solid lightgrey;
+                position: relative;
+                width: 100%;
+                max-width: 478px;
+                margin: 10px;
+                a {
+                    display: block;
+                    height: calc(100% - 40px);
+                    width: calc(100% - 40px);
+                    padding: 20px;
+                    text-align: center;
+                }
+            }
+        }
     }
 }
 
@@ -128,6 +151,6 @@ footer {
     text-align: center;
     padding: 20px;
     border-top: 1px solid lightgrey;
-    @include serif;
+    @include productsans;
     font-size: 20px;
 }

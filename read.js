@@ -16,6 +16,7 @@ if (!location.hash || location.hash == "#") {
 window.onhashchange = renderArticle;
 
 function renderArticle() {
+    document.body.scrollTop = 0;
     if (!location.hash || location.hash == "#") {
         location.hash = "home";
     }

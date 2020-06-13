@@ -5,18 +5,20 @@
 
 <!-- ## [F3rt1l1z3r (můj obec)](#f3rt1l1z3r) -->
 
-<center>
+<div class="index-articles">
 
-## [Typy tanců](#654975)
+[A relative story](#937452)
 
-## [Jak uvařit těstoviny s tuňákem](#824068)
+[Typy tanců](#654975)
 
-## [Popelka a stalking](#98849)
+[Jak uvařit těstoviny s tuňákem](#824068)
 
-## [Steré pověsti české](#104544)
+[Popelka a stalking](#98849)
 
-## [Module 3 project](#190766)
+[Steré pověsti české](#104544)
 
-## [Srp z pravěku](#755309)
+[Module 3 project](#190766)
 
-</center>
+[Srp z pravěku](#755309)
+
+</div>
