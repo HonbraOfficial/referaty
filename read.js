@@ -26,7 +26,7 @@ function renderArticle() {
     document.querySelector("title").innerHTML = `${document.querySelector("article h1").innerHTML} - ${wintitle}`;
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
-    var url = location.href.split("honbra.com").join("honbraofficial.github.io").split("honbraofficial.github.io/referaty/").join("bit.ly/hbreferaty");
+    var url = location.href.split("index.html").join("").split("honbra.com").join("honbraofficial.github.io").split("honbraofficial.github.io/referaty/").join("bit.ly/hbreferaty");
     document.getElementById("share").innerHTML = url;
     document.getElementById("shareimg").src = "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=" + url;
   });
