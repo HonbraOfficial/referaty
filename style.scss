@@ -1,189 +1,259 @@
 @import url('https://fonts.googleapis.com/css2?family=Product+Sans:wght@200;300;400&family=Roboto:wght@200;300;400&display=swap');
 @import url("flow-text.css");
-
+@import url("https://honbraofficial.github.io/font-awesome.css");
 @mixin productsans {
-    font-family: 'Product Sans', sans-serif;
-    font-weight: 300;
+  font-family: 'Product Sans', sans-serif;
+  font-weight: 300;
 }
-
 @mixin roboto {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 300;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
 }
-
 @mixin hoverableborder {
-  box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.5);
   transition: box-shadow 0.2s;
-  &:hover {
-    box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.5);
+
+  &:hover {
+    box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.5);
   }
 }
 
+@mixin link {
+
+    color: dodgerblue;
+    text-decoration: none;
+    cursor: pointer;
+    position: relative;
+
+    &::before {
+      position: absolute;
+      bottom: -1px;
+      left: 50%;
+      transition: width 0.3s;
+      transform: translateX(-50%);
+      width: 0;
+      height: 1px;
+      background-color: dodgerblue;
+      content: "";
+    }
+
+    &:hover {
+      &::before {
+        width: 100%;
+      }
+    }
+
+    &:active {
+      color: royalblue;
+    }
+}
+
 ::-webkit-scrollbar {
-    width: 16px;
-    border-left: 1px solid lightgrey;
+  width: 16px;
+  border-left: 1px solid lightgrey;
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: lightgrey;
-    &:active {
-        background-color: grey;
-    }
+  background-color: lightgrey;
+
+  &:active {
+    background-color: grey;
+  }
 }
 
 ::selection {
-    background-color: black;
-    color: white;
-    mix-blend-mode: difference;
+  background-color: black;
+  color: white;
+  mix-blend-mode: difference;
 }
 
 body {
-    @include roboto;
-    margin: 0px;
+  @include roboto;
+  margin: 0;
 }
 
 #main-head {
-    background-color: white;
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    width: 100%;
-    border-bottom: 1px solid white;
+  background-color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  border-bottom: 1px solid white;
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: lightgrey;
+    transition: width 0.3s;
+  }
+
+  #scrollbar {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background-color: lightgrey;
+  }
+
+  .head {
+    padding: 10px;
+    text-align: center;
+    position: relative;
+
+    .title {
+      color: black;
+      font-size: 30px;
+      @include productsans;
+      text-decoration: none;
+      text-align: center;
+      transition: font-size 0.3s;
+    }
+  }
+
+  &.scrolled {
     &::before {
-      content: "";
-      position: absolute;
-      bottom: -1px;
-      left: 0px;
-      width: 0%;
-      height: 1px;
-      background-color: lightgrey;
-      transition: width 0.3s;
+      width: 100%;
     }
-    #scrollbar {
-      position: absolute;
-      bottom: -1px;
-      left: 0px;
-      width: 0%;
-      height: 3px;
-      background-color: lightgrey;
-    }
+
     .head {
-        padding: 10px;
-        text-align: center;
-        position: relative;
-        .title {
-            color: black;
-            font-size: 30px;
-            @include productsans;
-            text-decoration: none;
-            text-align: center;
-            transition: font-size 0.3s;
-        }
+      .title {
+        font-size: 25px;
+      }
     }
-    &.scrolled {
-        &::before {
-          width: 100%;
-        }
-        .head {
-            .title {
-                font-size: 25px;
-            }
-        }
-    }
+  }
 }
 
 .filler {
-    height: 500vh;
+  height: 500vh;
 }
 
 .head-fill {
-    width: 100%;
+  width: 100%;
 }
 
 main {
-    article {
-        margin: 0 auto;
-        width: calc(100% - 40px);
-        max-width: 1000px;
-        padding: 20px;
-        overflow: auto;
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {
-            @include productsans;
-        }
-        h1 {
-            font-size: 2em;
-        }
-        h2 {
-            font-size: 1.5em;
-        }
-        h3 {
-            font-size: 1.25em;
-        }
-        h4 {
-            font-size: 1.125em;
-        }
-        h5 {
-            font-size: 1.0625em;
-        }
-        h6 {
-            font-size: 1em;
-        }
-        a {
-            color: dodgerblue;
-            text-decoration: none;
-            &:hover {
-                text-decoration: underline;
-            }
-            &:active {
-                color: royalblue;
-            }
-        }
-        img {
-            max-width: 100%;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-            max-height: 750px;
-        }
-        p {
-            text-indent: 0em;
-        }
-        .index-articles {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            p {
-                display: block;
-                position: relative;
-                width: 100%;
-                max-width: 500px;
-                border-radius: 8px;
-                margin: 0px;
-                transition: box-shadow 0.2s;
-                 &:hover {
-                   box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.1);
-                 }
-                a {
-                    display: block;
-                    height: calc(100% - 40px);
-                    width: calc(100% - 40px);
-                    padding: 20px;
-                    text-align: center;
-                }
-            }
-        }
+  article {
+    margin: 0 auto;
+    width: calc(100% - 40px);
+    max-width: 1000px;
+    padding: 20px;
+    overflow: auto;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      @include productsans;
     }
+
+    h1 {
+      font-size: 2em;
+    }
+
+    h2 {
+      font-size: 1.5em;
+    }
+
+    h3 {
+      font-size: 1.25em;
+    }
+
+    h4 {
+      font-size: 1.125em;
+    }
+
+    h5 {
+      font-size: 1.0625em;
+    }
+
+    h6 {
+      font-size: 1em;
+    }
+
+    .share {
+      cursor: pointer;
+      position: relative;
+
+      &::before {
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        transition: width 0.3s;
+        width: 0;
+        height: 1px;
+        background-color: black;
+        content: "";
+      }
+
+      &:hover {
+        &::before {
+          width: 100%;
+        }
+      }
+    }
+
+    a {
+      @include link;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      max-height: 750px;
+    }
+
+    p {
+      text-indent: 0;
+    }
+
+    .index-articles {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+
+      p {
+        display: block;
+        position: relative;
+        width: 100%;
+        max-width: 500px;
+        border-radius: 8px;
+        margin: 0;
+        transition: box-shadow 0.2s;
+        overflow: hidden;
+
+        &:hover {
+          box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.1);
+        }
+
+        a {
+          display: block;
+          height: calc(100% - 40px);
+          width: calc(100% - 40px);
+          padding: 20px;
+          text-align: center;
+        }
+      }
+    }
+  }
 }
 
 footer {
-    text-align: center;
-    padding: 20px;
-    border-top: 1px solid lightgrey;
-    @include productsans;
-    font-size: 20px;
+  text-align: center;
+  padding: 20px;
+  border-top: 1px solid lightgrey;
+  @include productsans;
+  font-size: 20px;
+
+  .share {
+    
+  }
 }
