@@ -20,7 +20,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
-    <link rel="stylesheet" href="style.min.css">
+    <link rel="stylesheet" href="style.css">
     <script src="common.js" defer></script>
     <script src="read.js" defer></script>
 </head>
@@ -28,24 +28,23 @@
 <body>
     <header id="main-head">
         <nav class="head">
-            <a href="#home" class="title">HBReferáty</a>
+            <a href="#home" class="title center">HBReferáty</a>
         </nav>
         <div id="scrollbar"></div>
     </header>
 
     <div class="head-fill"></div>
 
-    <main>
+    <main style="opacity: 0;">
         <article>
 
         </article>
+        <footer>
+            <p><span id="share" onclick="share()"></span></p>
+            <p><img id="shareimg"></p>
+            <p>&copy; 2020 Jan Brabec</p>
+        </footer>
     </main>
-
-    <footer>
-      <p><span id="share" onclick="share()"></span></p>
-      <p><img id="shareimg"></p>
-        <p>&copy; 2020 Jan Brabec</p>
-    </footer>
 </body>
 
 </html>
