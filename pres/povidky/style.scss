@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Roboto|Product+Sans:500|Material+Icons&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Roboto|Open+Sans:500|Material+Icons&display=swap");
 :root {
     --mdc-theme-primary: dodgerblue;
     --mdc-theme-on-primary: #000;
@@ -7,7 +7,7 @@
 }
 
 body {
-    font-family: "Product Sans", "Roboto", Arial, Helvetica, sans-serif !important;
+    font-family: "Open Sans", "Roboto", Arial, Helvetica, sans-serif !important;
     font-weight: 500;
     font-size: 20px;
     margin: 20px;
