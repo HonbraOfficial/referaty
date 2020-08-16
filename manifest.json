@@ -2,12 +2,8 @@
     "name": "HBReferáty",
     "short_name": "HBReferáty",
     "icons": [{
-        "src": "icons/android-chrome-512x512.png",
-        "sizes": "512x512",
-        "type": "image/png"
-    }, {
-        "src": "icons/android-chrome-192x192.png",
-        "sizes": "192x192",
+        "src": "favicon.png",
+        "sizes": "1600x1600",
         "type": "image/png"
     }],
     "lang": "cs-CZ",

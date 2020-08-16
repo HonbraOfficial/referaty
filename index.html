@@ -5,61 +5,46 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/png" href="favicon.png" />
     <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="favicon.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="favicon-apple.png">
     <meta name="theme-color" content="white" />
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="HBReferáty">
+    <meta name="apple-mobile-web-app-title" content="Hello World">
+    <meta name="msapplication-TileImage" content="images/hello-icon-144.png">
     <meta name="msapplication-TileColor" content="#FFFFFF">
-    <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
 
     <title>HBReferáty</title>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/marked@1.1.1/lib/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
     <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+    <script src="common.js" defer></script>
+    <script src="read.js" defer></script>
 </head>
 
 <body>
+    <header id="main-head">
+        <nav class="head">
+            <a href="#home" class="title">HBReferáty</a>
+        </nav>
+        <div id="scrollbar"></div>
+    </header>
 
-    <nav>
-        <div class="nav-wrapper">
-            <a href="#" class="brand-logo center">HBReferáty</a>
-        </div>
-    </nav>
+    <div class="head-fill"></div>
 
+    <main>
+        <article>
 
+        </article>
+    </main>
 
-
-    <article class="flow-text article-centered">
-
-    </article>
-
-    <div class="article-centered">
-        <div class="more-articles">
-
-        </div>
-    </div>
-
-
-    <footer class="page-footer">
-        <div class="container">
-            <div class="row">
-                <div>
-                    <h5 class="white-text">HBReferáty</h5>
-                </div>
-            </div>
-        </div>
-        <div class="footer-copyright">
-            <div class="container">
-                © 2020 Jan Brabec
-            </div>
-        </div>
+    <footer>
+        <p><span id="share"></span></p>
+        <p><img id="shareimg"></p>
+        <p>&copy; 2020 Jan Brabec</p>
     </footer>
 </body>
 
